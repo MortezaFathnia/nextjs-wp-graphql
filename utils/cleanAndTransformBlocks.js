@@ -20,7 +20,7 @@ export const cleanAndTransformBlocks = (blocksJSON) => {
           delete block[deleteKey]
         })
         if (block.innerBlocks?.length) {
-          removeUnusedDataAndAssignId(blocks.innerBlocks)
+          removeUnusedDataAndAssignId(block.innerBlocks)
         } else {
           delete blocks.innerBlocks;
         }
