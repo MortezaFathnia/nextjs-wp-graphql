@@ -36,7 +36,6 @@ export const PropertySearch = () => {
     });
     const data = await response.json();
     setProperties(data.properties);
-    console.log(data.properties);
     setTotalResults(data.total);
   };
 

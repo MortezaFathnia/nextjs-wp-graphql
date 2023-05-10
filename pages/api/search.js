@@ -10,7 +10,6 @@ const handler = async (req, res) => {
     let minPriceFilter = ``;
     let maxPriceFilter = ``;
 
-    console.log(filters)
     if (filters.hasParking) {
       hasParkingFilter = `{key: "has_parking", compare: EQUAL_TO, value: "1"}`
     }
