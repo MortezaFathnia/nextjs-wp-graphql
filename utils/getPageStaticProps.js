@@ -14,6 +14,21 @@ export const getPageStaticProps = async (context) => {
           id
           title
           blocksJSON
+          featuredImage {
+            node {
+              sourceUrl
+            }
+          }
+        }
+        ... on Property {
+          id
+          title
+          blocksJSON
+          featuredImage {
+            node {
+              sourceUrl
+            }
+          }
         }
       }
       acfOptionsMainMenu {
@@ -56,6 +71,8 @@ export const getPageStaticProps = async (context) => {
 
   return {
     props: {
+      title:data.nodeByUri.title,
+      featuredImage:data.nodeByUri.featuredImage?.node?.sourceUrl || null,
       mainMenuItems: mainMenuItems(data.acfOptionsMainMenu.mainMenu.menuItems),
       callToActionLabel: data.acfOptionsMainMenu.mainMenu.callToActionButton.label,
       callToActionDestination: data.acfOptionsMainMenu.mainMenu.callToActionButton.destination.uri,

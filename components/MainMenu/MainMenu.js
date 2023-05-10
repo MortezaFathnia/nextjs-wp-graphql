@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { FaHouseUser, FaHeart } from 'react-icons/fa'
 
 export const MainMenu = ({ items, callToActionLabel, callToActionDestination }) => {
-  console.log('Main Menu:', items);
   return (
     <div className="bg-slate-800 flex text-white px-5 h-[64px] sticky top-0 z-20">
       <div className="py-4 pl-5 flex text-pink-600">

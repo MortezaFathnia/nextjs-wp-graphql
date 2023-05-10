@@ -3,7 +3,9 @@ import { Column } from "components/Column";
 import { Columns } from "components/Columns";
 import { Cover } from "components/Cover";
 import { Heading } from "components/Heading";
+import { PostTitle } from "components/PostTitle";
 import { Paragraph } from "components/Praragraph";
+import { PropertySearch } from "components/PropertySearch";
 import Image from "next/image";
 import { theme } from "theme";
 
@@ -47,6 +49,20 @@ export const BlockRenderer = ({ blocks }) => {
           >
             <BlockRenderer blocks={block.innerBlocks} />
           </Columns>
+        )
+      }
+      case ("acf/propertysearch"):{
+        return(
+          <PropertySearch key={block.id}/>
+        )
+      }
+      case ("core/post-title"):{
+        return(
+          <PostTitle 
+          level={block.attributes.level}
+          textAlign={block.attributes.textAlign}
+          key={block.id}
+          />
         )
       }
       case ("core/column"): {
